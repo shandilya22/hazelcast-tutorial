@@ -31,8 +31,8 @@ public class ClientDeclarativeConfigurationExample {
 		Thread t = new Thread(() -> {
 			try {
 				Thread.sleep(5000);
-				ClientConfig config = new XmlClientConfigBuilder(new FileInputStream(
-						"/Users/rishavshandilya/Documents/Programming/HazelcastYoutube/HazelcastTutorialSourceCode/custom-path/hazelcast-client.xml")).build();
+				ClientConfig config = new XmlClientConfigBuilder(
+						new FileInputStream("/Users/shandilya/Documents/Programming/hazelcast-tutorial/custom-path/hazelcast-client.xml")).build();
 				HazelcastInstance hz = HazelcastClient.newHazelcastClient(config);
 				
 				System.out.println("Hz client started");
@@ -50,8 +50,8 @@ public class ClientDeclarativeConfigurationExample {
 	public void initHzServer() {
 		Thread t = new Thread(() -> {
 			try {
-				Config config = new XmlConfigBuilder(new FileInputStream(new File(
-						"/Users/rishavshandilya/Documents/Programming/HazelcastYoutube/HazelcastTutorialSourceCode/custom-path/hazelcast.xml"))).build();
+				Config config = new XmlConfigBuilder(
+						new FileInputStream(new File("/Users/shandilya/Documents/Programming/hazelcast-tutorial/custom-path/hazelcast.xml"))).build();
 				HazelcastInstance     hz    = Hazelcast.newHazelcastInstance(config);
 				IMap<Integer, String> myMap = hz.getMap("myMap");
 				myMap.put(1, "test");

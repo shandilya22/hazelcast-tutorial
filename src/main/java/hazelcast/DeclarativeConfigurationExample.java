@@ -15,7 +15,7 @@ public class DeclarativeConfigurationExample {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		Config config = new XmlConfigBuilder(new FileInputStream(new File(
-				"/Users/rishavshandilya/Documents/Programming/HazelcastYoutube/HazelcastTutorialSourceCode/custom-path/hazelcast.xml"))).build();
+				"/Users/shandilya/Documents/Programming/hazelcast-tutorial/custom-path/hazelcast.xml"))).build();
 		HazelcastInstance     hz    = Hazelcast.newHazelcastInstance(config);
 		IMap<Integer, String> myMap = hz.getMap("myMap");
 		myMap.put(1, "test");
